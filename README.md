@@ -10,6 +10,21 @@ mvn archetype:generate -DgroupId=com.cliffconsulting \
 	-DarchetypeArtifactId=maven-archetype-webapp
 	-DinteractiveMode=false
 
+
+This was then checked in;
+Next to do a build
+
+- mvn package
+
+
+Created a Dockerfile that will use the tomcat image and put this maven release in it
+
+
+- docker build -t name/proto .
+- docker run -d -p 8080:8080 -name myproto name/proto
+
+
+
 ## Next Steps
 
 in web.xml upgrade form 2.3 to 2.5 dtd define

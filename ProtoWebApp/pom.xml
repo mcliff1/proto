@@ -7,6 +7,15 @@
   <version>1.0-SNAPSHOT</version>
   <name>ProtoWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <dependencyManagement>
+  	<!--from https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-project-maven.html--><dependencies>
+  		<dependency>
+  			<groupId>com.amazonaws</groupId>
+  			<artifactId>aws-java-sdk-bom</artifactId>
+  			<version>1.11.106</version>
+  			<type>pom</type>
+  			<scope>import</scope></dependency></dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -20,6 +29,10 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>com.amazonaws</groupId>
+    	<artifactId>aws-java-sdk-dynamodb</artifactId></dependency>
+    
   </dependencies>
   <build>
     <finalName>ProtoWebApp</finalName>

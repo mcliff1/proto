@@ -2,13 +2,24 @@ package com.cliffconsulting.proto;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
+
 public class OverviewServlet extends HttpServlet {
 
+	final AmazonDynamoDB db = AmazonDynamoDBClientBuilder.defaultClient();
+	
     /**
 	 * 
 	 */
@@ -23,6 +34,21 @@ public class OverviewServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<h1> this is  my message </h1>");
+        try {
+        	Map<String, AttributeValue> item_values =
+        			new HashMap<String, AttributeValue>();
+        	
+        	item_values.put("botId", new AttributeValue("testbot"));
+        	item_values.put("field1", new AttributeValue("field1Value"));
+        	String botId="test";
+        	db.putItem("SimBot", item_values);
+        } catch (ResourceNotFoundException e) {
+        	out.println("error:" + e);
+        	
+        } catch (AmazonServiceException e) {
+        	out.println("amazon error:" + e);
+        }
+        out.println("added somethign to dynamo db table ha ha");
     }
 
     public void destroy() {

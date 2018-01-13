@@ -1,10 +1,20 @@
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+package com.cliffconsulting.proto;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class OverviewServlet extends HttpServlet {
 
-    public void init() throws ServletException {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6334914160933771229L;
+
+	public void init() throws ServletException {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -12,7 +22,7 @@ public class OverviewServlet extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1> my message </h1>");
+        out.println("<h1> this is  my message </h1>");
     }
 
     public void destroy() {

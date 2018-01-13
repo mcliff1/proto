@@ -9,5 +9,17 @@
     <servlet-name>OverviewServlet</servlet-name>
     <servlet-class>com.cliffconsulting.proto.OverviewServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SimBotServlet</servlet-name>
+  	<servlet-class>com.cliffconsulting.proto.SimBotServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OverviewServlet</servlet-name>
+  	<url-pattern>/overview</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SimBotServlet</servlet-name>
+  	<url-pattern>/simBot</url-pattern>
+  </servlet-mapping>
 
 </web-app>

@@ -1,4 +1,4 @@
-package com.cliffconsulting;
+package com.cliffconsulting.javabot;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

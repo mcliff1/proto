@@ -1,4 +1,4 @@
-package com.cliffconsulting;
+package com.cliffconsulting.javabot;
 
 /**
  * Hello world!

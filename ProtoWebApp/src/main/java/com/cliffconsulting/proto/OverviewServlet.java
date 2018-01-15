@@ -26,16 +26,12 @@ public class OverviewServlet extends HttpServlet {
 	private static final long serialVersionUID = -6334914160933771229L;
 
 	
-	private static final String AWS_ACCESS_KEY_ID = "AKIAJ27MW6HDGCXJ4O6A";
-	
-	private static final String AWS_SECRET_ACCESS_KEY = "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";
-	
-	private static final String AWS_REGION = "us-west-2";
+	//private static final String AWS_REGION = "us-west-2";
 
-	private static BasicAWSCredentials creds = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
+	//private static BasicAWSCredentials creds = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
 	
-	//final AmazonDynamoDB db = AmazonDynamoDBClientBuilder.defaultClient();
-	final AmazonDynamoDB db = AmazonDynamoDBClientBuilder.standard().withRegion(AWS_REGION).withCredentials(new AWSStaticCredentialsProvider(creds)).withRegion("us-west-2").build();
+	final AmazonDynamoDB db = AmazonDynamoDBClientBuilder.defaultClient();
+	//final AmazonDynamoDB db = AmazonDynamoDBClientBuilder.standard().withRegion(AWS_REGION).withCredentials(new AWSStaticCredentialsProvider(creds)).withRegion("us-west-2").build();
 	
 	
 	public void init() throws ServletException {

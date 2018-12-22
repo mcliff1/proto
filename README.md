@@ -1,10 +1,14 @@
 # proto
+
 Project to build discovery war file.  Initially will display some container and environment information, expect to add basic capabilities of standard J2EE WebApp container and package in Docker container
 
-Main SubProject
+This will publish a docker image running a Java Web Application.
 
-| ProtoWebApp | WAR file (requires the AWS credentials in the environment) that will store to the SimBot Dynamo SB |
-| JavaBot | Java implentation of a bot that will post |
+
+Main | SubProject
+---|---
+ProtoWebApp | WAR file (requires the AWS credentials in the environment) that will store to the SimBot Dynamo SB
+JavaBot | Java implentation of a bot that will post
 
 
 ## Requires
